@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+:root{
+    --bgColor: #fff;
+    --h2Color: #000000;
+    --paragraphColor: #000000;
+    --spanColor: rgba(0, 0, 0, 0.8);
+    --spanHoverColor: #00000015;
+    --spanBorder: 1px solid rgba(0, 0, 0, 0.15);
+    --inputBgColor: #fff;
+    --inputBorder: 1px solid #fff;
+    --inputIconColor: #000000;
+    --inputTextColor: #000000;
+    --themeColor: #58A9F8;
+    --footerBg: #eeeeee;
+    --socialIcons: #000;
+}
+
+.dark-theme{
+    --bgColor: #000000;
+    --h2Color: #fff;
+    --paragraphColor: #fff;
+    --spanColor: rgba(255, 255, 255, 0.8);
+    --spanHoverColor: rgba(255, 255, 255, 0.15);
+    --spanBorder: 1px solid rgba(255, 255, 255, 0.4);
+    --inputBgColor: rgba(0, 0, 0, 0.5);
+    --inputBorder: 1px solid rgba(255, 255, 255, 0.4);
+    --inputIconColor: #fff;
+    --inputTextColor: #fff;
+    --themeColor: #58A9F8;
+    --footerBg: #222222;
+    --socialIcons: #ffffff;
+}
+
+p{
+    color: var(--paragraphColor);
+}
+
+.main-container{
+    background-image: url("./images/bg-image.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    position: relative;
+}
+
+
+.main-container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 2rem;
+    position: relative;
+}
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-menu .theme-btn{
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    border: none;
+    background-color: var(--themeColor);
+    color: #fff;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: 0.2s;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    padding: 0 2rem;
+    position: relative;
+}
+
+header h1{
+    color: #fff;
+    font-size: 2.2rem;
+}
+
+header p{
+    color: #fff;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+.input-search{
+    min-width: 768px;
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 1rem 1.2rem;
+    border-radius: 10rem;
+    background-color: var(--inputBgColor);
+    gap: 0.5rem;
+    border: var(--inputBorder);
+}
+
+.input-search input{
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    color: var(--inputTextColor);
+}
+
+.input-search i{
+    color: var(--inputIconColor);
+}
+
+.suggestions{
+    padding: 0 2rem;
+    padding-top: 1.5rem;
+    user-select: none;
+    background-color: var(--bgColor);
+}
+
+.suggestion-texts{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    overflow-x: hidden;
+}
+
+.suggestion-texts span{
+    padding: 0.2rem 0.4rem;
+    border: var(--spanBorder);
+    border-radius: 0.25rem;
+    color: var(--spanColor);
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+
+.suggestion-texts span:hover{
+    background-color: var(--spanHoverColor);
+}
+
+main{
+    padding: 0 2rem;
+    width: 100%;
+    padding-top: 2rem;
+    background-color: var(--bgColor);
+}
+
+main h2{
+    color: var(--h2Color);
+}
+
+.result-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.result-div{
+    margin-bottom: 1.5rem;
+    margin-right: 1.5rem;
+    position: relative;
+    width: 290px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.result-div img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.result-div a{
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    position: absolute;
+    z-index: 200;
+    bottom: 0.8rem;
+    right: 0.8rem;
+    border: none;
+    text-decoration: none;
+    background-color: var(--themeColor);
+    color: #fff;
+    border-radius: 0.25rem;
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    transition: 0.2s;
+}
+
+.result-div:hover a{
+    display: flex;
+}
+
+.show-more-button{
+    padding: 0.8rem 1.2rem;
+    text-align: center;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--themeColor);
+    border: none;
+    margin: 30px auto;
+    color: white;
+}
+
+.show-more-div{
+    width: 100%;
+    display: none;
+    align-items: center;
+}
+
+footer{
+    background-color: var(--footerBg);
+    padding: 1rem 2rem;
+}
+
+.footer-container{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+
+.footer-container .social-icons{
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+    gap: 0.8rem;
+}
+
+.footer-container .social-icons i{
+    color: var(--socialIcons);
+    font-size: 1.4rem;
+    transition: 0.2s;
+}
+
+.footer-container .social-icons i:hover{
+    color: var(--themeColor);
+}
+
+
+@media (max-width: 768px) {
+    header p {
+        font-size: 1rem;
+    }
+
+    .input-search {
+        min-width: 100%;
+    }
+}
+
+
+@media (max-width: 568px) {
+    nav {
+        padding: 0rem 1rem;
+    }
+
+    header {
+        padding: 0 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .suggestions {
+        padding: 0 1rem;
+        padding-top: 1.5rem;
+    }
+
+    main {
+        padding: 0 1rem;
+        padding-top: 2rem;
+    }
+
+    footer{
+        padding: 1rem 1rem;
+    }
+}
+
+@media (max-width: 468px) {
+    .result-div {
+        margin-bottom: 1.5rem;
+        margin-right: 0rem;
+        position: relative;
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+}
